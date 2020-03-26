@@ -1,19 +1,5 @@
-# coms
+ ## 在开发过程中想改变样式就加类名
 
-## Project setup
-```
-yarn install
-```
+ ## 按需导入根目录建一个plugins的文件夹 =》element.js
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+ 
