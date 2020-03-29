@@ -5,7 +5,10 @@ import Login from '../components/login/Login.vue'
 import Home from '../components/home/Home.vue'
 import Welcome from '../components/welcome/Welcome.vue'
 import Userlist from '../components/user/userList.vue'
-
+import Rights from '../components/rights/rights.vue'
+import OrdesList from '../components/ordes/ordes.vue'
+import GoodsList from '../components/goods/goodsList.vue'
+import DataList from '../components/datas/dataList.vue'
 
 Vue.use(VueRouter)
 const routes = [
@@ -31,7 +34,24 @@ const routes = [
       {
         path: "/userList",
         component: Userlist,
+      },
+      {
+        path: "/Rights",
+        component: Rights,
+      },
+      {
+        path: "/GoodsList",
+        component: GoodsList,
+      },
+      {
+        path: "/OrdesList",
+        component: OrdesList,
+      },
+      {
+        path: "/DataList",
+        component: DataList,
       }
+
 
     ],
 

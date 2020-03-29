@@ -99,7 +99,7 @@
       <el-form
         :model="editform"
         :rules="editformRules"
-        ref="editruleForm"
+        ref=" "
         label-width="70px"
         class="demo-ruleForm"
       >
