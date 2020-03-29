@@ -3,10 +3,11 @@ import VueRouter from 'vue-router'
 
 import Login from '../components/login/Login.vue'
 import Home from '../components/home/Home.vue'
+import Welcome from '../components/welcome/Welcome.vue'
+import Userlist from '../components/user/userList.vue'
+
+
 Vue.use(VueRouter)
-
-
-
 const routes = [
   // 如果访问的是根路劲，就自动重定向到登录页！
   {
@@ -20,8 +21,23 @@ const routes = [
   },
   {
     path: "/Home",
-    component: Home,
+    component: Home,// 只要访问了home就重定向到 
+    redirect: "/Welcome",
+    children: [
+      {
+        path: "/Welcome",
+        component: Welcome,
+      },
+      {
+        path: "/userList",
+        component: Userlist,
+      }
+
+    ],
+
   },
+
+
 
 ]
 

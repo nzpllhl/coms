@@ -3,7 +3,7 @@
     <!-- 绘制Login的页面 -->
     <div class="Login-box">
       <div class="Avatare-box">
-        <img class="~../assets.imgs/hl.jpg" />
+        <img src="../../assets/imgs/log.png" />
       </div>
       <!-- from 表单 -->
       <el-form
@@ -61,7 +61,7 @@ export default {
       this.$refs.LoginForm.validate(valid => {
         console.log(valid); // 返回布尔值
         if (!valid) return;
-        this.$axios.get("login", this.LoginForm).then(data => {
+        this.$http.get("login", this.LoginForm).then(data => {
           let res = data;
           if (res.status === 200) {
             this.$message.success("登录成功！");
@@ -84,8 +84,9 @@ export default {
 
 <style lang="less" scoped>
 .Logon-content {
-  background: lightblue;
+  background: url("../../assets/imgs/zm.png") lightblue;
   display: flex;
+  width: 100%;
   height: 100%;
   justify-content: center;
   align-items: center;
