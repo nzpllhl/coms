@@ -1,40 +1,65 @@
 <template>
   <div>
-    <!-- 头部 面包屑导航-->
-    <el-breadcrumb separator-class="el-icon-arrow-right">
-      <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
-      <el-breadcrumb-item>权限管理</el-breadcrumb-item>
-      <el-breadcrumb-item>权限列表</el-breadcrumb-item>
-    </el-breadcrumb>
-
-    <el-card>
-      <!-- table -->
-      <el-table :data="rightsList" border>
-        <el-table-column type="index"></el-table-column>
-        <el-table-column label="权限名称" prop="name"></el-table-column>
-        <el-table-column label="路径" prop="luj"></el-table-column>
-        <el-table-column label="权限等级" prop="vip"></el-table-column>
-      </el-table>
-    </el-card>
+    <el-header>
+      <!-- <router-link to="/Rights/golist">首页</router-link>
+      <router-link to="/Rights/user">用户</router-link>
+      <router-link to="/Rights/profile">个人中心</router-link>-->
+      <el-row>
+        <el-col :span="4">
+          <img src alt />
+        </el-col>
+        <el-col :span="20">
+          <el-menu
+            router
+            mode="horizontal"
+            background-color="#2a2a2a"
+            active-text-color="#ffd04b"
+            :default-active="$route.path"
+          >
+            <el-menu-item index="/Rights/golist">首页</el-menu-item>
+            <el-menu-item index="/Rights/user">首用户</el-menu-item>
+            <el-menu-item index="/Rights/profile">个人中心</el-menu-item>
+          </el-menu>
+        </el-col>
+      </el-row>
+    </el-header>
+    <el-main>
+      <router-view></router-view>
+      <router-view name="logo"></router-view>
+    </el-main>
+    <el-footer>Footer</el-footer>
   </div>
-  <!-- 卡片视图 -->
 </template>
 
 <script>
 export default {
   data() {
-    return {
-      rightsList: []
-    };
-  },
-  created() {
-    this.getrightsList();
-  },
-  methods: {
-    getrightsList() {}
+    return {};
   }
 };
 </script>
 
 <style lang="less" scoped>
+* {
+  margin: 0;
+  padding: 0;
+}
+.el-header {
+  background: #2a2a2a;
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.el-footer {
+  background: #2a2a2a;
+  color: #fff;
+  height: 60px;
+  line-height: 60px;
+  text-align: center;
+}
+.el-main {
+  min-height: calc(100vh - 120px);
+  color: #fff;
+}
 </style>

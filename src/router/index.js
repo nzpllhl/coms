@@ -10,6 +10,13 @@ import OrdesList from '../components/ordes/ordes.vue'
 import GoodsList from '../components/goods/goodsList.vue'
 import DataList from '../components/datas/dataList.vue'
 
+import profile from '../views/profile.vue'
+import user from '../views/user.vue'
+import golist from '../views/golist.vue'
+
+import add from '../views/add.vue'
+import list from '../views/list.vue'
+import sls from '../views/sls.vue'
 Vue.use(VueRouter)
 const routes = [
   // 如果访问的是根路劲，就自动重定向到登录页！
@@ -22,6 +29,7 @@ const routes = [
     path: "/Login",
     component: Login,
   },
+
   {
     path: "/Home",
     component: Home,// 只要访问了home就重定向到 
@@ -38,6 +46,52 @@ const routes = [
       {
         path: "/Rights",
         component: Rights,
+        children: [
+
+          {
+            path: '',
+            name: "user",
+            component: user
+          },
+
+
+          {
+            path: 'profile',
+            name: "profile",
+            component: profile
+          },
+          {
+            path: 'user',
+            name: "user",
+            component: user,
+            children: [
+              {
+                path: '',
+                name: "add",
+                component: add
+              },
+              {
+                path: 'add',
+                name: "add",
+                component: add
+              },
+              {
+                path: 'list',
+                name: "list",
+                component: list
+              },
+            ]
+          },
+          {
+            path: 'golist',
+            name: "golist",
+            component: golist
+          },
+          {
+            path: "*",
+            component: sls
+          }
+        ]
       },
       {
         path: "/GoodsList",
@@ -50,13 +104,11 @@ const routes = [
       {
         path: "/DataList",
         component: DataList,
-      }
+      },
 
-
-    ],
+    ]
 
   },
-
 
 
 ]
